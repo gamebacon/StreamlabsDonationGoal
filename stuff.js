@@ -1,15 +1,15 @@
 // Events will be sent when someone followers
 // Please use event listeners to run functions.
 
-
 let inf = new Intl.NumberFormat('en-US');
+
 
 function format(givenNumber) {
   return "$" + inf.format(givenNumber);
 }
 
 function getCurrent(curr, max) {
-  percent = curr/max * 100;
+  percent = (curr / max * 100.0)
   return format(curr) + ` (${percent}%)`;
 }
 
@@ -22,6 +22,7 @@ document.addEventListener('goalLoad', function(obj) {
   let start = obj.detail.amount.start;
   
   let current = obj.detail.amount.current;
+
   let slider = $('#mySlider');
   
   slider.max = max;
